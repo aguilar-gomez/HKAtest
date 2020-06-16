@@ -87,7 +87,7 @@ chr_sizes = p1p2p3.groupby(["chromo"]).count()
 
 features=["pop1_fix","pop1_seg","pop2_fix","pop2_seg","pop3_fix","pop3_seg"]
 with open(outfile,'w') as f:
-	f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\n'.format("chromosome", "w_start", "w_end","chi2_p1","chi2_2","chi_p3"))
+	f.write('{0}\t{1}\t{2}\t{3}\t{4}\t{5}\n'.format("chromosome", "w_start", "w_end","chi2_p1","chi2_p2","chi_p3"))
 	for chromosome in chr_sizes.index:
 		smalldf = p1p2p3[p1p2p3["chromo"]==chromosome].reset_index()
 		w_start = 1 #angsd is one-based
