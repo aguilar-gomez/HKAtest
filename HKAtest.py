@@ -52,7 +52,7 @@ def chi_test_w(counts_w,pop,pol_prop,fix_prop):
 	n_sites = n_seg + n_fix
 	return ss.chisquare([n_seg, n_fix],[n_sites*pol_prop,n_sites*fix_prop])
 
-outfile = args.pop1 + "." + args.pop2 + "." + args.pop3 + ".w" + args.window_size + ".s" + args.slide + ".fa" + args.fixed_af + ".HKA_test"
+outfile = args.pop1 + "." + args.pop2 + "." + args.pop3 + ".w" + str(args.window_size) + ".s" + str(args.slide) + ".fa" + str(args.fixed_af) + ".HKA_test"
 fixed_af = args.fixed_af
 pop1=pd.read_csv(args.pop1 + ".mafs",sep="\t")
 pop2=pd.read_csv(args.pop2 + ".mafs",sep="\t")
