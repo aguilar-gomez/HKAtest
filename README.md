@@ -20,13 +20,16 @@ optional arguments:
 
 ## Output 
 It prints the number of analyzed sites (present in the three populations)
+
 It also prints the observed proportions per population of fixed vs polymorphic sites
 
 Example:
+
 Analyzing 28779842 sites found in the 3 populations
-Proportion of polymorphic and fixed pop1: *polymorphic_proportion_pop1 fixed_proportion_pop1= 1 - polymorphic_proportion_pop1*
-Proportion of polymorphic and fixed pop2: *polymorphic_proportion_pop2 fixed_proportion_pop2*
-Proportion of polymorphic and fixed pop3: *polymorphic_proportion_pop3 fixed_proportion_pop3*
+
+- Proportion of polymorphic and fixed pop1: *polymorphic_proportion_pop1 fixed_proportion_pop1= 1 - polymorphic_proportion_pop1*
+- Proportion of polymorphic and fixed pop2: *polymorphic_proportion_pop2 fixed_proportion_pop2*
+- Proportion of polymorphic and fixed pop3: *polymorphic_proportion_pop3 fixed_proportion_pop3*
 
 It generates a file (pop1pop2pop3.HKA_test) with the following columns:
   - chromosome
