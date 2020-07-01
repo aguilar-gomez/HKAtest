@@ -58,8 +58,8 @@ pop1=pd.read_csv(args.pop1 + ".mafs",sep="\t")
 pop2=pd.read_csv(args.pop2 + ".mafs",sep="\t")
 pop3=pd.read_csv(args.pop3 + ".mafs",sep="\t")
 
-pop1pop2=pop1.merge(pop2,on=["chromo","position","major","minor","ref"],suffixes=["pop1","pop2"])
-p1p2p3=pop1pop2.merge(pop3,on=["chromo","position","major","minor","ref"])
+pop1pop2=pop1.merge(pop2,on=["chromo","position","major","ref"],suffixes=["pop1","pop2"])
+p1p2p3=pop1pop2.merge(pop3,on=["chromo","position","major","ref"])
 
 print("Analyzing "+str(len(p1p2p3))+" sites found in the 3 populations")
 
