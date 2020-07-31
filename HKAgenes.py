@@ -59,7 +59,7 @@ parser.add_argument("pop1", type=str, help="name of population 1 (prefix of maf 
 parser.add_argument("pop2", type=str, help="name of population 2 (prefix of maf file)")
 args = parser.parse_args()
 
-outfile = args.pop1 + "." + args.pop2 + ".fa" + str(args.fixed_af) + ".MK_test"
+outfile = args.pop1 + "." + args.pop2 + ".fa" + str(args.fixed_af) + ".HKAgene_test"
 fixed_af = args.fixed_af
 pop1=pd.read_csv(args.pop1 + ".mafs",sep="\t")
 pop2=pd.read_csv(args.pop2 + ".mafs",sep="\t")
