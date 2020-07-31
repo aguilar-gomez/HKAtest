@@ -107,5 +107,5 @@ for chromosome in chr_sizes.index:
         results.append([chromosome]+chi_p1)
 
 dfresults=pd.DataFrame(results,columns=["gene","chi2","pvalue","degrees of freedom","l","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"])
-dfresults.to_csv(outfile,sep ="\t",index= False,columns=["gene","chi2","pvalue","degrees of freedom","poly_gene","poly_transcriptome","fix_transcriptome"])
+dfresults.to_csv(outfile,sep ="\t",index= False,columns=["gene","chi2","pvalue","degrees of freedom","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"])
 
