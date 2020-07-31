@@ -3,6 +3,9 @@ There are two available scripts:
 1) *HKAtest.py* works on genome assemblies and calculates HKA on windows of user defined size, it works on 3 populations
 2) *HKAgenes.py* works on transcriptomes and calculated HKA comparing each gene to the transcriptome, each gene gets a pvalue, for 2 populations
 
+## Installation
+git clone https://github.com/aguilar-gomez/HKAtest.git
+
 ## HKAtest.py
 ### Usage 
 This script performs an HKA test over 3 populations. It uses the allele frequencies generated in angsd. It uses as input the output files of -doMaf from angsd (unzipped pop.maf.gz). 
