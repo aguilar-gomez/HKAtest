@@ -6,8 +6,6 @@ import pandas as pd
 import scipy.stats as ss
 import argparse
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 def fixed(af1,af2):
 	'''
@@ -69,7 +67,7 @@ pop2=pd.read_csv(args.pop2 + ".mafs",sep="\t")
 
 p1p2=pop1.merge(pop2,on=["chromo","position","major","ref"],suffixes=["pop1","pop2"])
 
-print("Analyzing "+str(len(p1p2))+" sites found in the 3 populations")
+print("Analyzing "+str(len(p1p2))+" sites found in both populations")
 
 
 #Fixed D
