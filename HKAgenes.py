@@ -104,7 +104,8 @@ for chromosome in chr_sizes.index:
         counts_w = smalldf[features].sum()
         if p1_pol!=0 or p1_fix!=0:
                 chi_p1 = chi_contingency(counts_w,"pop1",p1_pol, p1_fix)
-                results.append([chromosome]+chi_p1)
+		if chi_p1[0]!="error":
+                        results.append([chromosome]+chi_p1)
 
 dfresults=pd.DataFrame(results,columns=["gene","chi2","pvalue","degrees of freedom","l","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"])
 dfresults.to_csv(outfile,sep ="\t",index= False,columns=["gene","chi2","pvalue","degrees of freedom","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"])
