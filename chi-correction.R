@@ -5,8 +5,10 @@ library(snpStats)
 args = commandArgs(trailingOnly=TRUE)
 HKAtest<- read.delim(args[1])
 file<- args[2] #name of output
+min_sites<- args[3]
 
 ##########Prepare Data###################################
+HKAtest<-HKAtest[HKAtest$poly_gene+HKAtest$fix_gene>min_sites,]
 
 png(paste0("qqplot_chiHKA",file,".png"), width=600, height=600)
 qq.chisq(HKAtest$chi2,df=1)
