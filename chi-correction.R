@@ -9,6 +9,7 @@ min_sites<- args[3]
 
 ##########Prepare Data###################################
 HKAtest<-HKAtest_raw[HKAtest_raw$poly_gene+HKAtest_raw$fix_gene>min_sites,]
+HKAtest$sites<-HKAtest$poly_gene+HKAtest$fix_gene
 
 png(paste0("qqplot_chiHKA",file,".png"), width=600, height=600)
 qq.chisq(HKAtest$chi2,df=1)
