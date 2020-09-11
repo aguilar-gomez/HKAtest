@@ -5,7 +5,7 @@ library(snpStats)
 args = commandArgs(trailingOnly=TRUE)
 HKAtest_raw<- read.delim(args[1])
 file<- args[2] #name of output
-min_sites<- args[3]
+min_sites<- as.numeric(args[3])
 
 ##########Prepare Data###################################
 HKAtest<-HKAtest_raw[HKAtest_raw$poly_gene+HKAtest_raw$fix_gene>min_sites,]
