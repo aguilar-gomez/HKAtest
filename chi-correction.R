@@ -23,7 +23,7 @@ qq.chisq(HKAtest$corrected,df=1)
 dev.off()
 
 HKAtest$pval_corr<-pchisq(HKAtest$corrected, df=1, lower.tail=FALSE)
-HKAtest$pval2<-pchisq(HKAtest$chi2, df=1, lower.tail=FALSE)
+#HKAtest$pval2<-pchisq(HKAtest$chi2, df=1, lower.tail=FALSE) Sanity check: uncomment if you want to see the original p-value calculated again with this method (R vs python)
 
 write.table(HKAtest,paste0(args[1],"_corrected.tab"),
             quote = FALSE, row.names = FALSE, col.names = TRUE,
