@@ -1,5 +1,5 @@
 # HKAtest
-There are two available scripts:
+The following scripts are available:
 1) *HKAtest.py* works on genome assemblies and calculates HKA on windows of user defined size, it works on 3 populations
 2) *HKAgenes.py* works on transcriptomes and calculated HKA comparing each gene to the transcriptome, each gene gets a pvalue, for 2 populations
 3) *chi-correction.R* is a script that calculates the inflation factor from the chi-squared statistic, corrects the test statistics and recalculates the p-value
