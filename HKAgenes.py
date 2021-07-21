@@ -49,7 +49,8 @@ def chi_contingency(counts_w,pop,pol,fix):
     n_fix = counts_w[pop+"_fix"]
     table=np.array([[n_seg, n_fix],[pol,fix]])
     if n_seg+n_fix>0:
-        return list(ss.chi2_contingency(table))+[n_seg, n_fix,pol,fix]
+        chi2, p, dof, ex = ss.chi2_contingency(table)
+        return [chi2,p,n_seg, n_fix,pol,fix]
     else:
         return ["error",1,1,"na"]+[n_seg, n_fix,pol,fix]
 
@@ -98,15 +99,21 @@ print("Total sites "+args.pop2+":",p2_pol+p2_fix)
 
 chr_sizes = p1p2.groupby(["chromo"]).count()
 features=["pop1_fix","pop1_seg","pop2_fix","pop2_seg"]
-results=[]
+
+
+f = open(outfile,"w")
+columns=["gene","chi2","pvalue","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"]
+f.write("\t".join(columns))
+
+
+
 for chromosome in chr_sizes.index:
         smalldf = p1p2[p1p2["chromo"]==chromosome].reset_index()
         counts_w = smalldf[features].sum()
         if p1_pol!=0 or p1_fix!=0:
                 chi_p1 = chi_contingency(counts_w,"pop1",p1_pol, p1_fix)
                 if chi_p1[0]!="error":
-                        results.append([chromosome]+chi_p1)
+                        f.write("\n")
+                        f.write("\t".join([chromosome] + [str(x) for x in chi_p1] ) )
 
-dfresults=pd.DataFrame(results,columns=["gene","chi2","pvalue","degrees of freedom","l","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"])
-dfresults.to_csv(outfile,sep ="\t",index= False,columns=["gene","chi2","pvalue","degrees of freedom","poly_gene","fix_gene","poly_transcriptome","fix_transcriptome"])
-
+f.close()
