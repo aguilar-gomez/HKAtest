@@ -14,13 +14,11 @@ Note: make sure to use the same reference for all the bams and when running angs
 
 Example input file has the following columns:
 
->chromo	position	major	minor	ref	anc	knownEM	nInd
-
->chr2	30316	C	A	C	C	0.000002	26
-
->chr2	30337	C	A	C	C	0.027999	22
-
-
+```
+chromo	position	major	minor	ref	anc	knownEM	nInd
+chr2	30316	C	A	C	C	0.000002	26
+chr2	30337	C	A	C	C	0.027999	22
+```
 
 Usage: HKAtest.py [-h] fixed_af pop1 pop2 pop3 window_size slide
 
