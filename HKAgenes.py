@@ -49,7 +49,8 @@ def chi_contingency(counts_w,pop,pol,fix):
     n_fix = counts_w[pop+"_fix"]
     table=np.array([[n_seg, n_fix],[pol,fix]])
     if n_seg+n_fix>0:
-        chi2, p, dof, ex = ss.chi2_contingency(table)
+	#Apply Yates correction to chi2
+        chi2, p, dof, ex = ss.chi2_contingency(table,correction=True)
         return [chi2,p,n_seg, n_fix,pol,fix]
     else:
         return ["error",1,1,"na"]+[n_seg, n_fix,pol,fix]
