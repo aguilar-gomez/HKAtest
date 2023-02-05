@@ -12,6 +12,16 @@ git clone https://github.com/aguilar-gomez/HKAtest.git
 This script performs an HKA test over 3 populations. It uses the allele frequencies generated in angsd. It uses as input the output files of -doMaf from angsd (unzipped pop.maf.gz). 
 Note: make sure to use the same reference for all the bams and when running angsd, use the option -doMajorMinor 4 which uses the reference as the major allele (check angsd github and wiki in case this gets updated).
 
+Example input file has the following columns:
+
+>chromo	position	major	minor	ref	anc	knownEM	nInd
+
+>chr2	30316	C	A	C	C	0.000002	26
+
+>chr2	30337	C	A	C	C	0.027999	22
+
+
+
 Usage: HKAtest.py [-h] fixed_af pop1 pop2 pop3 window_size slide
 
 positional arguments:
