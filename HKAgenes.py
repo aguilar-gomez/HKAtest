@@ -66,8 +66,8 @@ fixed_af = args.fixed_af
 pop1=pd.read_csv(args.pop1 + ".mafs",sep="\t")
 pop2=pd.read_csv(args.pop2 + ".mafs",sep="\t")
 
-
-p1p2=pop1.merge(pop2,on=["chromo","position","major","ref"],suffixes=["pop1","pop2"])
+#Added minor in the fileds they have to match to secure biallelic positions
+p1p2=pop1.merge(pop2,on=["chromo","position","major","ref","minor"],suffixes=["pop1","pop2"])
 
 print("Analyzing "+str(len(p1p2))+" sites found in both populations")
 
