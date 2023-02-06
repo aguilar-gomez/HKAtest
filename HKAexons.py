@@ -70,8 +70,8 @@ pop1=pd.read_csv(args.pop1 + ".mafs",sep="\t")
 pop2=pd.read_csv(args.pop2 + ".mafs",sep="\t")
 
 
-
-p1p2=pop1.merge(pop2,on=["chromo","position","major","ref"],suffixes=["pop1","pop2"])
+#Modify so that they also have to share minor allele (bialleic sites only)
+p1p2=pop1.merge(pop2,on=["chromo","position","major","ref","minor"],suffixes=["pop1","pop2"])
 
 print("Analyzing "+str(len(p1p2))+" sites found in both populations")
 
