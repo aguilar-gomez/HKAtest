@@ -17,7 +17,7 @@ def fixed(af1,af2, minor1, minor2):
 	
 	#Allele is not segregating in pop2 and the minor allele differs 
 	af2_fixed = (af2<1-fixed_af) | (af2>fixed_af)
-	triallelic= (!af1_fixed & af2_fixed) & (minor1 != minor2)
+	triallelic= ((not af1_fixed) & af2_fixed) & (minor1 != minor2)
 		
 	fixed = triallelic | af1_fixed
 	
